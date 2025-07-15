@@ -1,0 +1,20 @@
+services:
+  auth:
+    container_name: auth-php 
+    image: hyperf/hyperf:8.3-alpine-v3.19-swoole
+    volumes:
+      - ./:/opt/www
+    ports:
+      - 9502:9501
+    working_dir: /opt/www
+    environment:
+      - APP_ENV=dev
+      - SCAN_CACHEABLE=false
+    entrypoint: ["sh", "-c", "composer install && php /opt/www/bin/hyperf.php server:watch"]
+    networks:
+      - one-on-one
+
+networks:
+  one-on-one:
+    name: one-on-one
+    external: true
