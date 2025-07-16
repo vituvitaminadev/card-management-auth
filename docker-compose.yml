@@ -1,6 +1,7 @@
+name: one-auth
 services:
-  auth:
-    container_name: auth-php 
+  one-auth:
+    container_name: auth-php
     image: hyperf/hyperf:8.3-alpine-v3.19-swoole
     volumes:
       - ./:/opt/www
