@@ -17,7 +17,7 @@ use function Hyperf\Support\make;
 
 class AuthService
 {
-    private const CONTEXT_KEY = 'jwt_token';
+    public const CONTEXT_KEY = 'jwt_token';
 
     private string $secretKey;
 
